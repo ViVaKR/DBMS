@@ -6,7 +6,7 @@ select 번호
 from 
 	(
 		select 
-			차량작업번호
+			번호
 			, 업체
 			, 합계대상_컬럼
 			
