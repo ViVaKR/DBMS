@@ -1,7 +1,7 @@
 # 데이터 타입
 
 #### Oracle Built-in Data Types  
-+ Character Type  : 'Hello', 'A', '148'  
++ `Character Type`  : 'Hello', 'A', '148'  
     + CHAR(size) : `고정길이 검색 속도가 빠름`  
     + VARCHAR2(size) : `구분자를 통한 가변길이 검색 속도가 느림`   
     + NCHAR(size) : `기본적으로 바이트 사이즈이므로 3바이트 할당, CHAR 문자수 옵션 가능`
@@ -15,14 +15,16 @@
     + LONG  : 테이블 당 하나, 가변길이 문자열 2Gb - 1 or 2^31-1 Bytes, 현재는 사용되지 않음
     + CLOB  : 대용량 텍스트 데이터 최대 4Gb
     + NCLOB : 대용량 텍스트 유니코드 데이터 타입 최대 4Gb
-+ Numberic  : 정수 및 실수 숫자형
++ `Numberic`  : 정수 및 실수 숫자형
   + NUMBER(4) : 최대 4자로 이루어진 숫자
   + NUMBER(6,2) : 소수점 2자리에서 반올림, 최대 6자리 숫자
   + NUMBER(6,-2) : 소수점 -2자리에서 반올림, 최대 6자리 숫자
   + NUMBER : NUMBER(38, *)
   + NUMBER(*, 5) : NUMBER(38, 5)
-+ Date  : '2023-01-23'
-+ TimeStamp : '2023-06-03 10.38.29.00000'
++ `Date`  : 기준일 4712 
++ `TimeStamp` : NLS_TIMESTAMP_FORMAT 값 사용
+  + WITH TIME ZONE : NLS_TIMESTAMP_TZ_FORMAT 값 사용
+  + WITH LOCAT TIME ZONE : NLS_TIMESTAMP_TZ_FORMAT 값 사용
   
 ---
 #### ANSI, DB2, and SQL/DS Data Types
@@ -106,3 +108,17 @@ CREATE
 > 테이블스페이스에 대한 사용자 생성
 >> 대문자로 생성
 >> 테이블과 로그 스페이스를 할당함
+---
+
+## Clear Screen : ALT + CMD + L
+
+### CLI
+```sql
+    select name from v$databases;
+    shutdown imediately;
+    startup;
+    
+    select table_name from user_tables;
+    select * from tab;
+```
+

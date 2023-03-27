@@ -5,7 +5,7 @@ CREATE TABLE MEMBER (
     NAME NVARCHAR2(50), -- 한글이 들어감으로 NVARCHAR2
  -- GENDER CHAR(2 CHAR), -- CHAR 문자수 옵션의 한글 2자 : 6바이트
     GENDER NCHAR(2), -- 한글 고정 문자열에 권장 -> 한글 2자 : 4바이트
-    AGE NUMBER,
+    AGE NUMBER(3), -- 자릿수 지정
     BIRTHDAY CHAR(10), -- 2000-01-23 : NCHAR 불필요
     PHONE CHAR(13), -- 010-1234-5678 : NCHAR 불필요
     REGDATE DATE
