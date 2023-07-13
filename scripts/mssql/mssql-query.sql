@@ -1,0 +1,1 @@
+select ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as No, * from Members
