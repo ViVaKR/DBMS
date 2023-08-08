@@ -22,3 +22,22 @@ GO
 EXEC spFilmList
 
 -- Refresh Cache : Ctrl + Shift + Alt + R
+-- DROP PROC spFilmList
+GO
+
+-- Working with Parameters
+
+CREATE
+PROC spFilmCriteria
+(@MinLength AS INT)
+AS
+BEGIN
+    SELECT
+        Title
+        ,RunTimeMinutes
+    FROM
+        Film
+    ORDER BY
+        RunTimeMinutes ASC
+    
+END
