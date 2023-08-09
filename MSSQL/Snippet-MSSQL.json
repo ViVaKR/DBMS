@@ -1,0 +1,28 @@
+{
+	"SELET FROM": {
+		"prefix": "vselect",
+		"body": [
+			"SELECT",
+			"\t${2:*}",
+			"FROM",
+			"\t${1:Table}",
+			"$0"
+		],
+		"description": "SELECT FROM"
+	},
+	"Create Stored Procedure": {
+		"prefix": "vproc",
+		"body": [
+			"CREATE",
+			"PROC sp${1:Name}",
+			"\t(",
+			"\t\t@${2:param} AS ${3:INT}$4",
+			"\t)",
+			"AS",
+			"BEGIN",
+			"\t${5:SELECT 1 + 1}$0",
+			"END"
+		],
+		"description": "Create Stored Procedure"
+	}
+}
