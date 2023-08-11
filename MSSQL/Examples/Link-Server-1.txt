@@ -1,0 +1,12 @@
+sp_configure 'show advanced options', 1;  
+RECONFIGURE;
+GO 
+sp_configure 'Ad Hoc Distributed Queries', 1;  
+RECONFIGURE;  
+GO  
+  
+SELECT *
+FROM OPENDATASOURCE (
+        'SQLNCLI'
+        ,'Data Source=auto-eng.iptime.org,59273;Initial Catalog=HyundaiDb;User ID=HyundaiDb;Password=B9037!m8947#'
+        ).[HyundaiDb].dbo.견본_시트벨트_데이터바인딩

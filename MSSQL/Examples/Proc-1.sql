@@ -6,7 +6,8 @@
 
 
 USE Movies;
-GO -- begins a new batch
+GO
+-- begins a new batch
 
 ALTER -- CREATE 
 PROC [dbo].[spFilmList]
@@ -14,9 +15,10 @@ AS
 BEGIN
     SELECT
         Title
-        ,ReleaseDate
-        ,RunTimeMinutes
-        ,OscarNominations -- 오스카 후보
+        , ReleaseDate
+        , RunTimeMinutes
+        , OscarNominations
+    -- 오스카 후보
     FROM
         Film
     ORDER BY
@@ -37,15 +39,17 @@ ALTER
 --CREATE
 PROC spFilmCriteria
     (
-        @MinLength AS INT = NULL
-        ,@MaxLength AS INT = NULL
-        ,@Title AS NVARCHAR(MAX)
-    )
+    @MinLength AS INT = NULL
+        ,
+    @MaxLength AS INT = NULL
+        ,
+    @Title AS NVARCHAR(MAX)
+)
 AS
 BEGIN
     SELECT
         Title
-        ,RunTimeMinutes
+        , RunTimeMinutes
     FROM
         Film
     WHERE
@@ -66,25 +70,25 @@ GO
 DECLARE @MyDate AS DATETIME
 SET @MyDate = '1970-01-01'
 
-SELECT 
-    Title AS [이름]
-    ,ReleaseDate AS [날짜]
-    ,'Film' AS [타입]
-FROM Film
-WHERE ReleaseDate >= '1970-01-01'
+    SELECT
+        Title AS [이름]
+    , ReleaseDate AS [날짜]
+    , 'Film' AS [타입]
+    FROM Film
+    WHERE ReleaseDate >= '1970-01-01'
 
 UNION ALL
 
-SELECT
-    FullName AS [이름]
-    ,DoB AS [날짜]
-    ,'Actor' as [타입]
-FROM Actor
-WHERE DoB >= '1970-01-01'
+    SELECT
+        FullName AS [이름]
+    , DoB AS [날짜]
+    , 'Actor' as [타입]
+    FROM Actor
+    WHERE DoB >= '1970-01-01'
 
 UNION ALL
 
-SELECT FullName, DoB, 'Director'
-FROM Director
-WHERE DoB >= '1970-01-01'
+    SELECT FullName, DoB, 'Director'
+    FROM Director
+    WHERE DoB >= '1970-01-01'
 ORDER BY [날짜] ASC

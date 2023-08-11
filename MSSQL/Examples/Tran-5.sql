@@ -1,6 +1,4 @@
---======================= Start ============================--
-
-go
+--* Tran
 BEGIN TRY
     BEGIN TRANSACTION
 
