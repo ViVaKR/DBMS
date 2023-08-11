@@ -9,14 +9,14 @@ go
 
 SELECT * 
 FROM OPENDATASOURCE('SQLNCLI', 
-		'Data Source=auto-eng.iptime.org,59273;Initial Catalog=Hyundai;User ID=Hyundai;Password=B9037!m8947#;').[Hyunadi].dbo.업체정보
+		'Data Source=서버주소;Initial Catalog=데이터베이스;User ID=아이디;Password=비밀번호;').[Hyunadi].dbo.테이블명
 GO  
 
 SELECT *
 FROM OPENDATASOURCE (
         'SQLNCLI'
-        ,'Data Source=127.0.0.1,59273;Initial Catalog=Demo;User ID=sa;Password=B9037!m8947#'
-        ).[Demo].dbo.Person
+        ,'Data Source=서버주소;Initial Catalog=데이터베이스;User ID=아이디;Password=비밀번호'
+        ).[Demo].dbo.테이블명
 GO
 
 
