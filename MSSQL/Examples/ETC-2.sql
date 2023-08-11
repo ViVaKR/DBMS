@@ -19,8 +19,6 @@ FROM OPENDATASOURCE (
         ).[Demo].dbo.테이블명
 GO
 
-
-
 -- To enable the feature.  
 EXECUTE sp_configure 'xp_cmdshell', 1;  
 GO  
@@ -33,8 +31,7 @@ GO
 --	file: 각 폴더뿐만 아니라 파일도 표시됩니다. 0의 기본값에는 파일이 표시되지 않습니다.
 master.sys.xp_dirtree 'D:\Temp', 0, 1
 
-exec master..xp_cmdshell 'nslookup auto-eng.iptime.org'
--- Select * From users Where id ='id'; drop table users-- and pwd = 'password'
+exec master..xp_cmdshell 'nslookup 도메인'
 
 exec sp_configure
 -- 
