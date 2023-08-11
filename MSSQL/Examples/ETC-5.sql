@@ -43,9 +43,6 @@ WHERE
 	THEN 1 END 
 	ELSE 1 END = 1
 
--- 싱글 Attach
-EXEC sp_attach_single_file_db 'terminal', 'D:\MSSQL_Data\MSSQL\Data\terminal_Data.MDF' 
-
 -- 전체 테이블 수
 SELECT Count(*)
 FROM INFORMATION_SCHEMA.TABLES
@@ -176,7 +173,7 @@ FROM OPENDATASOURCE (
 use TutorialDB
 go
 SELECT top 10 * into Test
-FROM OPENDATASOURCE('MSOLEDBSQL','Server=auto-eng.iptime.org,59273;Database=Auto;User ID=sa;Password=B9037!m8947#;').Auto.dbo.주행일지
+FROM OPENDATASOURCE('MSOLEDBSQL','Server=127.0.0.1;Database=데이터베이스;User ID=아이디;Password=비밀번호;').Auto.dbo.테이블
 --
 -- 확인하기
 EXEC sp_addlinkedserver [database.windows.net];
@@ -231,9 +228,3 @@ where name = N'Works'
 -- 데이터베이스 파일정보
 SELECT name as 데이터베이스명, physical_name AS 파일위치
 FROM sys.master_files
-
--- [ ] : [ ] 안에 있는 글자들 예, [b-f] b에서 f 사이의 문자들
--- [^] : ^ 다음에 있는 문자 또는 문자들을 제외한 것, 
-select * from 국가코드 where 국가명 like '[^B-Z]%'
-select * from _측정
-select * from _스펙
