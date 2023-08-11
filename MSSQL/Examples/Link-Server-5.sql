@@ -44,14 +44,7 @@ SELECT * FROM [database].[schema].[table]
 SELECT * INTO [database].[schema].[table]
 FROM [server_a].[database].[schema].[table]
 
---Declare @sql nvarchar(max)
---set @sql = 'select * into AUTO.DMS.dbo.Test2 from Exam'
---exec sp_executesql @sql
-
 insert into AUTO.DMS.dbo.Exam (Fname) select Fname from Exam
-
--- insert into linkdb.db11000.u111000.income_board select * from amendb.[dbo].income_board
---"Provider=SQLOLEDB;Data Source=auto-eng.iptime.org,59273;Initial Catalog=DMS;User ID=DmsLogin;Password=B9037!m8947#"
 
 go
 -- ªË¡¶
