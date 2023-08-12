@@ -1,4 +1,7 @@
 --* 테이블을 변수로 생성 (임시테이블과 유사한 기능제공)
+USE MoviesB
+GO
+
 declare @TempPeople Table
 (
 	PersonName nvarchar(max),
@@ -16,3 +19,6 @@ where
 
 select * from @TempPeople
 go
+
+--*
+

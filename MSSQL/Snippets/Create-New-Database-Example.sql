@@ -2,8 +2,9 @@
 USE master
 GO
 
-IF NOT EXISTS (
- SELECT name
+IF NOT EXISTS 
+(
+SELECT name
 FROM sys.databases
 WHERE name = N'데이터베이스명'
 )
@@ -16,7 +17,7 @@ GO
 
 --* Set Collate Korea_Wansung_CI_AS
 ALTER DATABASE [데이터베이스명]
-COLLATE Korean_Wansung_CI_AS
+    COLLATE Korean_Wansung_CI_AS
 GO
 
 --? Check

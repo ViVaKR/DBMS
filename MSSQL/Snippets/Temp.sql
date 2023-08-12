@@ -1,7 +1,5 @@
 
 SELECT * FROM sys.databases;
-select * from Person
-
 
 Select T.TABLE_SCHEMA, T.TABLE_NAME
     , Stuff(
@@ -18,8 +16,6 @@ From INFORMATION_SCHEMA.TABLES As T
         On V.TABLE_SCHEMA = T.TABLE_SCHEMA
             And V.TABLE_NAME = T.TABLE_NAME
 Where V.TABLE_NAME Is Null
-
-
 
 exec sp_columns 'Person'
 

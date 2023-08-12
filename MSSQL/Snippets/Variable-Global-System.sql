@@ -1,3 +1,6 @@
+
+--* Global Varable
+
 select @@SERVERNAME as 'Server Name'
 
 select @@VERSION
@@ -6,7 +9,9 @@ select @@MICROSOFTVERSION
 
 select @@SERVICENAME
 
-select @@ROWCOUNT
+USE Movies;
+SELECT * FROM Actor 
+Select @@ROWCOUNT AS [행 갯수]
 
 Select SERVERPROPERTY('MachineName') as 'MachineName'
 

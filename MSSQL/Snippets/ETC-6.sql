@@ -6,8 +6,8 @@ SELECT * FROM sys.configurations WHERE name = 'xp_cmdshell'
 
 --* xp_cmdshell : Disable
 Use Master
-
 GO
+
 EXEC master.dbo.sp_configure 'xp_cmdshell', 0
 RECONFIGURE WITH OVERRIDE
 

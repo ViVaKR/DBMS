@@ -2,9 +2,7 @@ declare @Names nvarchar(max)
 declare @Count int
 
 exec spFilmsInYear @Year = 2000, @FilmList = @Names output, @FilmCount = @Count output
-
 select @Count as [Number of Films],  @Names as [List of Films]
-
 
 go
 
@@ -60,8 +58,6 @@ select
 	LEFT(DirectorName, charindex(' ', DirectorName)-1) -- 공란이 있는 텍스트 왼쪽 묶음 가져오기
 from
 	tblDirector
-
-
 
 -- 테이블 반환 함수 호출
 select

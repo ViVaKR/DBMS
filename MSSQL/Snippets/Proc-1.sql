@@ -4,10 +4,14 @@
     GO 문의 줄에는 주석을 제외한 T-SQL 문은 올수 없음
  */
 
-
-USE Movies;
+USE MoviesA;
 GO
 -- begins a new batch
+
+SELECT *
+FROM FilM
+
+GO
 
 ALTER -- CREATE 
 PROC [dbo].[spFilmList]
@@ -67,15 +71,32 @@ GO
 USE Movies
 GO
 
+SET NOCOUNT ON
+
 DECLARE @MyDate AS DATETIME
+DECLARE @NumFilms INT
+DECLARE @NumActors INT
+DECLARE @NumDirectors INT
+
 SET @MyDate = '1970-01-01'
+SET @NumFilms = (SELECT COUNT(*) FROM Film WHERE ReleaseDate >= @MyDate)
+SET @NumActors = (SELECT COUNT(*) FROM Actor WHERE DoB >= @MyDate)
+SET @NumDirectors = (SELECT COUNT(*) FROM Director WHERE DoB >= @MyDate)
+
+SELECT 'Number of films' AS [구분], @NumFilms AS [COUNT]
+UNION
+SELECT 'Number of Actors' As [구분], @NumActors AS [COUNT]
+
+PRINT 'Number of Films = ' + CAST(@NumFilms AS NVARCHAR(MAX))
+PRINT 'Number of Actors = ' + CAST(@NumActors AS NVARCHAR(MAX))
+PRINT 'Number of Directors = ' + CAST(@NumDirectors AS NVARCHAR(MAX))
 
     SELECT
-        Title AS [이름]
+    Title AS [이름]
     , ReleaseDate AS [날짜]
     , 'Film' AS [타입]
     FROM Film
-    WHERE ReleaseDate >= '1970-01-01'
+    WHERE ReleaseDate >= @MyDate
 
 UNION ALL
 
@@ -84,11 +105,11 @@ UNION ALL
     , DoB AS [날짜]
     , 'Actor' as [타입]
     FROM Actor
-    WHERE DoB >= '1970-01-01'
+    WHERE DoB >= @MyDate
 
 UNION ALL
 
     SELECT FullName, DoB, 'Director'
     FROM Director
-    WHERE DoB >= '1970-01-01'
+    WHERE DoB >= @MyDate
 ORDER BY [날짜] ASC
