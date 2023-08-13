@@ -1,6 +1,7 @@
-use Movie
+use Movies
 go
-alter function fnLongDate  
+
+CREATE function fnLongDate  
 	(
 		@FullDate as datetime
 	)
@@ -21,3 +22,5 @@ begin
 end
 
 -- End Line --
+
+GO

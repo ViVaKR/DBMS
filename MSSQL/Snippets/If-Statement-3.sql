@@ -1,3 +1,5 @@
+--* IF Statements
+
 USE AdventureWorks;  
 GO  
 DECLARE @AvgWeight DECIMAL(8,2), @BikeCount INT  

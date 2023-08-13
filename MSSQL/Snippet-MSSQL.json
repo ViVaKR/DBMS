@@ -1,14 +1,36 @@
 {
 	"DECLARE": {
-		"prefix": "vdeclare",
+		"prefix": "vDeclare",
 		"body": [
 			"DECLARE ${1:variable} ${2:INT}",
-			"$0"
+			"${3:SET} ${1:variable} = $0"
 		],
 		"description": "DECLARE"
 	},
+	"Declare Table": {
+		"prefix": "vDeclareTable",
+		"body": [
+			"DECLARE ${1:@TestTable} Table", 
+			"(${2:ColA} ${4:INT}, ${5:ColB} ${6:CHAR(3)})",
+			"$0"
+		],
+		"description": "Declare Table Like Temp Table"
+	},
+	"While Loop": {
+		"prefix": "vWhileLoop",
+		"body": [
+			"DECLARE ${1:@MyCounter} ${2:INT}",
+			"WHILE (${3:@MyCounter < 26})",
+			"BEGIN",
+				"\t${4:INSERT INTO @TestTable VALUES (@MyCounter, CHAR(@MyCounter + ASCII('a')));}",
+				"\t${5:SET @MyCounter = @MyCounter + 1;}",
+				"\t$0",
+			"END"
+		],
+		"description": "Whil Loop"
+	},
 	"SELET FROM": {
-		"prefix": "vselect",
+		"prefix": "vSelect",
 		"body": [
 			"SELECT",
 			"\t${2:*}",
@@ -19,14 +41,14 @@
 		"description": "SELECT FROM"
 	},
 	"SELET FROM ONE LINE": {
-		"prefix": "voselect",
+		"prefix": "vSelectOneLine",
 		"body": [
 			"SELECT ${2:*} FROM ${1:Table} $0"
 		],
 		"description": "SELECT FROM ONE LINE"
 	},
 	"SELET FROM EACH KEYWORD": {
-		"prefix": "vkselect",
+		"prefix": "vSelectKeywordLine",
 		"body": [
 			"SELECT ${2:*}",
 			"FROM ${1:Table}",
@@ -52,14 +74,14 @@
 	"Drop Database": {
 		"prefix": "vDropDatabase",
 		"body": [
-			"EXEC msdb.dbo.sp_delete_database_backuphistory", 
+			"EXEC msdb.dbo.sp_delete_database_backuphistory",
 			"@database_name = [${1:데이터베이스명}]",
 			"GO",
 			"",
 			"USE [master]",
 			"GO",
 			"",
-			"ALTER DATABASE [${1:데이터베이스명}]", 
+			"ALTER DATABASE [${1:데이터베이스명}]",
 			"SET SINGLE_USER WITH ROLLBACK IMMEDIATE",
 			"GO",
 			"",
