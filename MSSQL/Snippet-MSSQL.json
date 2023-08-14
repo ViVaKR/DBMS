@@ -1,4 +1,68 @@
 {
+	"INSERT INTO": {
+		"prefix": "vInsert",
+		"body": [
+			"INSERT INTO Demo",
+			"VALUES",
+			"\t\t('장길산'),",
+			"\t\t('임꺽정'),",
+			"\t\t('김옥순'),",
+			"\t\t('장촌장')",
+			"GO"
+		],
+		"description": "INSERT INTO"
+	},
+	"CREATE TABLE": {
+		"prefix": "vCreateTable",
+		"body": [
+			"USE ${1:Database}",
+			"GO",
+			"",
+			"IF OBJECT_ID(N'${2:TableName}', 'U') IS NULL",
+			"BEGIN",
+			"\tcreate table ${2:TableName}",
+			"\t(",
+			"\t\t${3:Id} INT PRIMARY KEY ${4:IDENTITY(1,1)},",
+			"\t\t${5:FullName} ${6:NVARCHAR(50)} ${7:NOT NULL}",
+			"\t);",
+			"END",
+			"ELSE",
+			"BEGIN",
+			"\t\t${0:PRINT '== 이미 있는 테이블입니다. =='}",
+			"END",
+			"GO"
+		],
+		"description": "CREATE TABLE"
+	},
+	"SHOW DATABASES": {
+		"prefix": "vShowDatabases",
+		"body": [
+			"SELECT",
+			"\tdatabase_id,",
+			"\tname,",
+			"\tcollation_name,",
+			"\tuser_access",
+			"FROM",
+			"\tsys.databases"
+		],
+		"description": "SHOW DATABASES"
+	},
+	"DROP TABLE": {
+		"prefix": "vDropTable",
+		"body": [
+			"IF OBJECT_ID(N'${1:TABLE}', 'U') IS NOT NULL",
+			"DROP TABLE ${1:TABLE}",
+			"GO$0"
+		],
+		"description": "DROP TABLE"
+	},
+	"DECLARE With Assign": {
+		"prefix": "vDeclareAssign",
+		"body": [
+			"DECLARE ${1:variable} ${2:INT} = 0$0;"
+		],
+		"description": "DECLARE With Assign"
+	},
 	"DECLARE": {
 		"prefix": "vDeclare",
 		"body": [
@@ -7,10 +71,27 @@
 		],
 		"description": "DECLARE"
 	},
+	"BEGIN END": {
+		"prefix": "vBeginEnd",
+		"body": [
+			"BEGIN",
+			"\t$0",
+			"END"
+		],
+		"description": "BEGIN END"
+	},
+	"IF Statement": {
+		"prefix": "vIF",
+		"body": [
+			"IF ${1:condition}",
+			"$0"
+		],
+		"description": "IF Statement"
+	},
 	"Declare Table": {
 		"prefix": "vDeclareTable",
 		"body": [
-			"DECLARE ${1:@TestTable} Table", 
+			"DECLARE ${1:@TestTable} Table",
 			"(${2:ColA} ${4:INT}, ${5:ColB} ${6:CHAR(3)})",
 			"$0"
 		],
@@ -22,12 +103,19 @@
 			"DECLARE ${1:@MyCounter} ${2:INT}",
 			"WHILE (${3:@MyCounter < 26})",
 			"BEGIN",
-				"\t${4:INSERT INTO @TestTable VALUES (@MyCounter, CHAR(@MyCounter + ASCII('a')));}",
-				"\t${5:SET @MyCounter = @MyCounter + 1;}",
-				"\t$0",
+			"\t${4:INSERT INTO @TestTable VALUES (@MyCounter, CHAR(@MyCounter + ASCII('a')));}",
+			"\t${5:SET @MyCounter = @MyCounter + 1;}",
+			"\t$0",
 			"END"
 		],
 		"description": "Whil Loop"
+	},
+	"SELET Only": {
+		"prefix": "vSelectOnly",
+		"body": [
+			"SELECT ${0:statement}"
+		],
+		"description": "SELECT Only"
 	},
 	"SELET FROM": {
 		"prefix": "vSelect",

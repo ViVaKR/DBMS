@@ -1,4 +1,13 @@
 --* While Loop
+
+/* 
+    WHILE condition
+    BEGIN
+        { statements }
+    END;
+
+ */
+
 --! Declare Table Example
 USE PlayGround
 GO
@@ -17,3 +26,21 @@ SELECT
     ColA, ColB
 FROM
     @TestTable
+
+--*
+
+DECLARE @site_value INT
+SET @site_value = 0
+
+WHILE (@site_value <= 10)
+BEGIN
+    SELECT 'Inside While Loop'
+    SET @site_value = @site_value + 1;
+END
+
+SELECT 'Done WHILE LOOP'
+GO
+
+--* 
+USE PlayGround;
+
