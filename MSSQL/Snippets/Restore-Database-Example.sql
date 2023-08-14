@@ -3,6 +3,13 @@ GO
 
 RESTORE FileListOnly from disk = '/var/opt/mssql/backup/adventure.bak'
 
+USE [master]
+GO
+
+
+RESTORE FileListOnly from disk = 'C:\SQLServer\Backup\hyundai_backup.bak'
+
+
 use Works
 GO
 SELECT * FROM sys.database_files
@@ -46,3 +53,24 @@ GO
 use master;
 alter database Works set recovery full
 go
+
+--* restore database
+RESTORE DATABASE [ViVa] 
+FROM  
+DISK = N'C:\SQLServer\Backup\hyundai_backup.bak' 
+WITH MOVE N'Hyundai' TO N'C:\SQLServer\Data\ViVa.mdf',  
+     MOVE N'Hyundai_log' TO N'C:\SQLServer\Data\ViVa_log.ldf',  
+RECOVERY,
+REPLACE;
+GO
+--*
+
+
+USE [ViVa]
+GO
+
+SELECT
+    *
+FROM
+    OfficeTableStyles
+

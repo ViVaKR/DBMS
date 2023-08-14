@@ -1,16 +1,26 @@
 
-use [데이터베이스명]
+use ViVa
 go
 
-alter database Hyundai
+alter database ViVa
 set recovery simple
 go
 
-dbcc shrinkfile([데이터베이스_log], 10)
+dbcc shrinkfile(N'Hyundai_log', 10)
 go
 
-alter database [데이터베이스명]
+alter database [ViVa]
 set recovery full;
 go
 
 -- End Line --
+
+
+
+
+
+
+
+
+
+
