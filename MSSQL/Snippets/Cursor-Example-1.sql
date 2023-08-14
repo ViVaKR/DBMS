@@ -12,7 +12,7 @@ open cs
 				begin
 
 					update 문제점 set 발생일자 = 
-					(select 발생시점 from TMP Where 작업번호 = @NO)
+					(select 발생시점 from 참조테이블 Where 작업번호 = @NO)
 					where current of cs
 				end
 

@@ -12,13 +12,16 @@
 USE PlayGround
 GO
 
-declare @TestTable Table (ColA INT, ColB CHAR(3));
+declare @TestTable Table (ColA INT,
+    ColB CHAR(3));
 DECLARE @MyCounter INT
 SET @MyCounter = 0;
 
 WHILE (@MyCounter < 26)
 BEGIN
-    INSERT INTO @TestTable VALUES (@MyCounter, CHAR(@MyCounter + ASCII('a')));
+    INSERT INTO @TestTable
+    VALUES
+        (@MyCounter, CHAR(@MyCounter + ASCII('a')));
     SET @MyCounter = @MyCounter + 1;
 END
 
@@ -42,5 +45,27 @@ SELECT 'Done WHILE LOOP'
 GO
 
 --* 
-USE PlayGround;
 
+USE [PlayGround]
+GO
+
+DECLARE @id INT
+DECLARE @fullname NVARCHAR(MAX)
+
+DECLARE cs CURSOR FOR
+SELECT Id, FullName FROM Demo
+
+OPEN cs
+FETCH NEXT FROM cs into @id, @fullname
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    PRINT @id
+    PRINT @fullname
+    FETCH NEXT FROM cs into @id, @fullname
+END
+
+CLOSE cs
+DEALLOCATE cs
+
+--*
