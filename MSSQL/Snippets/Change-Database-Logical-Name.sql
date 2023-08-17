@@ -17,6 +17,3 @@ ALTER DATABASE [ViVa] MODIFY FILE (Name = OldName, NEWNAME = ViVa);
 GO
 
 ALTER DATABASE [ViVa] MODIFY FILE (NAME = OldName_log, NEWNAME = ViVa_log)
-
-
-
