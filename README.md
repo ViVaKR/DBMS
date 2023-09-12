@@ -66,7 +66,6 @@
 >> DB2: IBM  
 >> Acceess: Microsoft  
 >> SQLite: SQLite  
-
 > 계층형
 > 망형
 
