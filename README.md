@@ -57,7 +57,7 @@
   - 응용프로그램을 통해 접근하는 사용자와 질의 편집도구를 사용해 접근하는 사용자로 구분할 수 있음
 
 ## 종류
->
+
 > :new_moon: 관계형 (RDBMS) : 테이블로 구성되며 테이블은 행과 열로 이루어져 있음
 >> MSSQL (SQL Server): Microsoft  
 >> MySQL: Oracle  
