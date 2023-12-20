@@ -1,6 +1,6 @@
 # PostgreSQL
 
-## docker run
+## Docker Image
 
 ```bash
     docker run -it -d --restart=always \
@@ -10,7 +10,7 @@
     -e LANG=ko_KR.utf8 \
     -e POSTGRES_HOST_AUTH_METHOD=trust \
     -e PGDATA=/var/lib/postgresql/data/pgdata \
-    -v /Users/vivakr/Docker/Postgres/Data:/var/lib/postgresql/data \
+    -v <User ID>/Docker/Postgres/Data:/var/lib/postgresql/data \
     postgres:latest
 ```
 
