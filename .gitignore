@@ -2,3 +2,5 @@ DBMS\MSSQL\Examples\Private
 
 //
 .DS_Store
+**/.idea
+**/**/.idea

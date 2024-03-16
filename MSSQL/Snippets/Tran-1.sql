@@ -1,6 +1,5 @@
 -- Basic Transaction
 Begin Tran
--- ½ÃÀÛ
 
 -- Add new records
 insert into tblFilm
@@ -13,14 +12,13 @@ from tblFilm
 Where FilmName = 'Iron Man 3'
 
 RollBack Tran
--- Ãë¼Ò
+-- ï¿½ï¿½ï¿½
 
 Select *
 from tblFilm
 Where FilmName = 'Iron Man 3'
 
 Commit Tran
---Ä¿¹Ô
 
 -- Naming Transactions
 Begin Tran AddIronMan3
@@ -46,7 +44,7 @@ select @IronMen = COUNT(*)
 From tblFilm
 Where FilmName = 'Iron Man 3'
 
-if @IronMen > 1 
+if @IronMen > 1
 	Begin
 	Rollback Tran AddIronMan3
 	Print 'Iron Man 3 was already there'
@@ -81,11 +79,11 @@ End Try
 Begin Catch
 	Rollback Tran AddIM
 	select
-	ERROR_NUMBER() as ¿À·ù¹øÈ£,
-	ERROR_STATE() as ¿À·ù»óÅÂ,
-	ERROR_SEVERITY() as ¿À·ù½É°¢µµ,
-	ERROR_LINE() as ¿À·ù¶óÀÎ¹øÈ£,
-	ERROR_MESSAGE() as ¿À·ù³»¿ë
+	ERROR_NUMBER() as ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£,
+	ERROR_STATE() as ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,
+	ERROR_SEVERITY() as ï¿½ï¿½ï¿½ï¿½ï¿½É°ï¿½ï¿½ï¿½,
+	ERROR_LINE() as ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¹ï¿½È£,
+	ERROR_MESSAGE() as ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 End Catch
 
 Select *
