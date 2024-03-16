@@ -1,6 +1,7 @@
 
 USE [master]
 GO
+-- check language table
 exec sys.sp_helplanguage
 
 CREATE LOGIN [KimBumJun]
@@ -22,5 +23,3 @@ GO
 
 ALTER ROLE [db_owner] ADD MEMBER [KimBumJun]
 GO
-
--- End Line --
