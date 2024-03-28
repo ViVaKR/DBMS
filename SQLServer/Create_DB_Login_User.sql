@@ -1,21 +1,21 @@
 --! 데이터베이스 및 로그인, 사용자 생성 !--
 
-USE master;
+use master;
 go
 
-IF NOT EXISTS (SELECT name
-FROM sys.databases
-WHERE name = N'W3Writer')
-CREATE DATABASE [W3Writer];
+if not exists (select name
+from sys.databases
+where name = N'Movies')
+create database [Movies];
 go
 
-IF SERVERPROPERTY('ProductVersion') > '12'
-    ALTER DATABASE [W3Writer] SET QUERY_STORE=ON;
+if SERVERPROPERTY('ProductVersion') > '12'
+    alter database [Movies] set QUERY_STORE=on;
 go
 
 --* Set Collate Korea_Wansung_CI_AS
-ALTER DATABASE [W3Writer]
-    COLLATE Korean_Wansung_CI_AS
+alter database [Movies]
+    collate Korean_Wansung_CI_AS
 go
 
 --? Check, master
@@ -23,48 +23,48 @@ use master;
 go
 
 --*  기본언어 한글로 변경
-USE W3Writer;
+use Movies;
 go
 
-EXEC sp_configure 'default language', 29 ;
+exec sp_configure 'default language', 29 ;
 go
 
-RECONFIGURE ;
+reconfigure ;
 go
 
 --* 마무리 작업, 전체복구 모델로 변경
-USE master;
+use master;
 go
 
-ALTER DATABASE [W3Writer] SET RECOVERY FULL
+alter database [Movies] set RECOVERY full
 go
 
-ALTER DATABASE [W3Writer] SET  MULTI_USER
+alter database [Movies] set  MULTI_USER
 go
 
 -- Login & User ---------------
 
-USE [master]
+use [master]
 go
 
-CREATE LOGIN [W3Writer]
-	WITH PASSWORD=N'B9037!m8947#',
-	DEFAULT_DATABASE=[W3Writer],
+create login [Movies]
+	with PASSWORD=N'Kv1!En9#Og6%Ni4&Uy8*',
+	DEFAULT_DATABASE=[Movies],
 	DEFAULT_LANGUAGE=[한국어],
-	CHECK_EXPIRATION=OFF,
-	CHECK_POLICY=OFF
+	CHECK_EXPIRATION=off,
+	CHECK_POLICY=off
 go
 
-USE [W3Writer]
+use [Movies]
 go
 
-CREATE USER [W3Writer] FOR LOGIN [W3Writer]
+create user [Movies] for LOGIN [Movies]
 go
 
-ALTER USER [W3Writer] WITH DEFAULT_SCHEMA=[dbo]
+alter user [Movies] with DEFAULT_SCHEMA=[dbo]
 go
 
-ALTER ROLE [db_owner] ADD MEMBER [W3Writer]
+alter role [db_owner] add MEMBER [Movies]
 go
 
 -- Begin Try

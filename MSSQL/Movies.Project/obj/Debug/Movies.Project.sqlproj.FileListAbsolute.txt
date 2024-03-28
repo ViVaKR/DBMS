@@ -1,0 +1,9 @@
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/bin/Debug/Movies.Project.dacpac
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/bin/Debug/Movies.Project.dll
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/bin/Debug/Movies.Project.pdb
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/obj/Debug/Model.xml
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/obj/Debug/refactor.xml
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/obj/Debug/postdeploy.sql
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/obj/Debug/predeploy.sql
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/obj/Debug/Movies.Project.dll
+/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/obj/Debug/Movies.Project.pdb

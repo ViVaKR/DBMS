@@ -34,5 +34,11 @@
     # [ -S server ]
     # [ -Q "CMD line query" and exit ]
 
+    # Get Seed
+    SELECT IDENT_SEED('<Table Name>') AS Identity_Seed;
+
+    # Truncate Table
+    truncate table <Table Name>;
+    go
 
 ```

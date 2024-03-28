@@ -1,0 +1,55 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/Movies.Project.sqlproj": {}
+  },
+  "projects": {
+    "/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/Movies.Project.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/Movies.Project.sqlproj",
+        "projectName": "Movies.Project",
+        "projectPath": "/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/Movies.Project.sqlproj",
+        "packagesPath": "/Users/vivakr/.nuget/packages/",
+        "outputPath": "/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/vivakr/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net46"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU5128"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net46": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y7vlVvvtaM+q0+ubA/+COK7Bf17CcPDaOBvu/MRGQ3xoNpu0qfWD1pOmhjryOEZBHBcIuZKbv9RuBx+pNrHjxA==",
+  "success": true,
+  "projectFilePath": "/Users/vivakr/GitWorkspace/DBMS/MSSQL/Movies.Project/Movies.Project.sqlproj",
+  "expectedPackageFiles": [
+    "/Users/vivakr/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/Users/vivakr/.nuget/packages/microsoft.netframework.referenceassemblies.net46/1.0.0/microsoft.netframework.referenceassemblies.net46.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
