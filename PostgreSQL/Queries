@@ -1,8 +1,0 @@
-
-CREATE TABLE Info (
-    id INTEGER generated ALWAYS as IDENTITY,
-    member_name VARCHAR(20) not NULL,
-    birth_day TIMESTAMP not null
-)
-
-SELECT * from Info

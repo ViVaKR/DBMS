@@ -5,12 +5,25 @@
 ```bash
     docker run -it -d --restart=always \
     --name viv-postgres \
-    -p 59173:5432 \
-    -e POSTGRES_PASSWORD="B9037^8947@" \
+    -p 59293:5432 \
+    -e POSTGRES_PASSWORD=postgres \
     -e LANG=ko_KR.utf8 \
-    -e POSTGRES_HOST_AUTH_METHOD=trust \
+    -e TZ=Asiz/Seoul \
+    -e POSTGRES_INITDB_ARGS="--data-checksums -E utf8 --no-locale" \
     -e PGDATA=/var/lib/postgresql/data/pgdata \
-    -v <User ID>/Docker/Postgres/Data:/var/lib/postgresql/data \
+    -v ~/Docker/Postgres/Data:/var/lib/postgresql/data \
+    postgres:latest
+
+
+    docker run -it -d --restart=always \
+    --name viv-postgres \
+    -p 59293:5432 \
+    -e POSTGRES_PASSWORD=postgres \
+    -e LANG=ko_KR.utf8 \
+    -e TZ=Asiz/Seoul \
+    -e POSTGRES_INITDB_ARGS="--data-checksums -E utf8 --no-locale" \
+    -e PGDATA=/var/lib/postgresql/data/pgdata \
+    -v ~/Docker/Postgres/Data:/var/lib/postgresql/data \
     postgres:latest
 ```
 
@@ -23,7 +36,7 @@
 `dpkg-reconfigure locales` -> ...
 
 ```bash
-sudo locale-gen en_US en_US.UTF-8 
+sudo locale-gen en_US en_US.UTF-8
 sudo dpkg-reconfigure locales
 ```
 

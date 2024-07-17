@@ -2,7 +2,7 @@
 
 ## 정의
 
-- 대용량 __데이터베이스__를 관리하고 운영하는 소프트웨어  
+- 대용량 __데이터베이스__를 관리하고 운영하는 소프트웨어
 
 ## 주요기능
 
@@ -30,42 +30,42 @@
 - `DBA` (Database Administrator) : 데이터베이스 관리자
 - `DDL` (Data Definition Language) : 데이터정의 언어
 - `DML` (Data Manipulation Language) : 데이터조작 언어
-  - 데이터 삽입, 갱식, 질의(Query Language), 삭제
+    - 데이터 삽입, 갱식, 질의(Query Language), 삭제
 - `DCL` (Data Control Language) : 데이터제어 언어, 데이터베이스 관리자가 주로 사용하는 언어
-  - 사용자 계정관리, 세션관리, 로그인 관리, 서버관리
+    - 사용자 계정관리, 세션관리, 로그인 관리, 서버관리
 - `SQL` (Strucutred Query Language)
-  - SQL Server : 마이크로소프트 사에서 공급하는 관계형 데이터베이스 관리시스템 (DBMS), Integrated Business Intelligence Tool
-  - DB2, Oracle, MySQL, Sybase, Informix
+    - SQL Server : 마이크로소프트 사에서 공급하는 관계형 데이터베이스 관리시스템 (DBMS), Integrated Business Intelligence Tool
+    - DB2, Oracle, MySQL, Sybase, Informix
 - T-SQL (Transact-SQL)
 - 데이터마이닝 : 데이터 가운데 숨겨져 있는 유용한 상관관계를 찾아내어 미래에 실행 가능한 정보를 추출하여 의사결저에 이용하는 과정
-  - 분석서비스 (Analysis Service)
+    - 분석서비스 (Analysis Service)
 - 데이터웨어하우징 : 흩어져 있는 기업 데이터 정보를 최종사용자가 쉽게 접근 활용할 수 있도록 하는 개방형 시스템 기술
-  - 통합서비스 (Integration Service            )
+    - 통합서비스 (Integration Service            )
 
 ## 구분
 
 - Administrator : 데이터베이스 관리자
-  - 데이터베이스, 테이블, 뷰, 인덱스, 제약 조건 등의 데이터베이스 스키마를 정의
-  - 데이터 저장 구조와 접근 방법을 결정
-  - 데이터보안 정책을 결정
-  - 무결성 제약조건정의
-  - 오류 발생시 데이터베이스 복구
-  - 데이터베이스 및 하드웨어를 모니터링 하고 관리
+    - 데이터베이스, 테이블, 뷰, 인덱스, 제약 조건 등의 데이터베이스 스키마를 정의
+    - 데이터 저장 구조와 접근 방법을 결정
+    - 데이터보안 정책을 결정
+    - 무결성 제약조건정의
+    - 오류 발생시 데이터베이스 복구
+    - 데이터베이스 및 하드웨어를 모니터링 하고 관리
 - Designer : 데이터베이스 설계자
 - Developer : 응용프로그램 개발자
 - End User : 단말 사용자
-  - 응용프로그램을 통해 접근하는 사용자와 질의 편집도구를 사용해 접근하는 사용자로 구분할 수 있음
+    - 응용프로그램을 통해 접근하는 사용자와 질의 편집도구를 사용해 접근하는 사용자로 구분할 수 있음
 
 ## 종류
 
 > :new_moon: 관계형 (RDBMS) : 테이블로 구성되며 테이블은 행과 열로 이루어져 있음
->> MSSQL (SQL Server): Microsoft  
->> MySQL: Oracle  
->> PostgreSQL: PostgreSQL  
->> Oracle: Oracle  
->> DB2: IBM  
->> Acceess: Microsoft  
->> SQLite: SQLite  
+>> MSSQL (SQL Server): Microsoft
+>> MySQL: Oracle
+>> PostgreSQL: PostgreSQL
+>> Oracle: Oracle
+>> DB2: IBM
+>> Acceess: Microsoft
+>> SQLite: SQLite
 > 계층형
 > 망형
 
