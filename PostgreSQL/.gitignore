@@ -1,0 +1,7 @@
+.git/
+node_modules/
+tmp/
+*.log
+*.swp
+.env
+!src/main.js

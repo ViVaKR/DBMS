@@ -1,16 +1,25 @@
-# Use postgres/example user/password credentials
-version: '3.1'
-
 services:
-
-  db:
-    image: postgres
+  postgres-viv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bm-postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: example
-
-  adminer:
-    image: adminer
-    restart: always
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_INITDB_ARGS: --locale-provider=icu --icu-locale=ko-KR --encoding=UTF8 --data-checksums
     ports:
-      - 8080:8080
+      - "49273:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - postgres_net
+
+volumes:
+  postgres_data:
+
+networks:
+  postgres_net:
+    external: true
